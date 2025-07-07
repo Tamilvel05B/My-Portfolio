@@ -81,10 +81,10 @@ window.onload = () => {
   });
 };
 const urls = [
-  "https://app.powerbi.com/view?r=eyJr=EXAMPLE_KEY&pageName=ReportSection1",
-  "https://app.powerbi.com/view?r=eyJr=EXAMPLE_KEY&pageName=ReportSection2",
-  "https://app.powerbi.com/view?r=eyJr=EXAMPLE_KEY&pageName=ReportSection3",
-  "https://app.powerbi.com/view?r=eyJr=EXAMPLE_KEY&pageName=ReportSection4"
+  "https://app.powerbi.com/view?r=eyJrIjoiOGYwNWMwYTMtMWNjZS00YWFlLWJiY2QtMTE3YzQ5OTkxYzhhIiwidCI6IjkxNjM1MTAzLTM4YmMtNGU2MC04NDg2LWIyYzFlNjAxNjNiNiJ9&pageName=Exec Dashboard",
+  "https://app.powerbi.com/view?r=eyJrIjoiOGYwNWMwYTMtMWNjZS00YWFlLWJiY2QtMTE3YzQ5OTkxYzhhIiwidCI6IjkxNjM1MTAzLTM4YmMtNGU2MC04NDg2LWIyYzFlNjAxNjNiNiJ9&pageName=Map",
+  "https://app.powerbi.com/view?r=eyJrIjoiOGYwNWMwYTMtMWNjZS00YWFlLWJiY2QtMTE3YzQ5OTkxYzhhIiwidCI6IjkxNjM1MTAzLTM4YmMtNGU2MC04NDg2LWIyYzFlNjAxNjNiNiJ9&pageName=Product Detail",
+  "https://app.powerbi.com/view?r=eyJrIjoiOGYwNWMwYTMtMWNjZS00YWFlLWJiY2QtMTE3YzQ5OTkxYzhhIiwidCI6IjkxNjM1MTAzLTM4YmMtNGU2MC04NDg2LWIyYzFlNjAxNjNiNiJ9&pageName=Customer Detail"
 ];
 
 let index = 0;
