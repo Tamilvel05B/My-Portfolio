@@ -80,3 +80,21 @@ window.onload = () => {
     origin: { y: 0.3 }
   });
 };
+const urls = [
+  "https://app.powerbi.com/view?r=eyJr=EXAMPLE_KEY&pageName=ReportSection1",
+  "https://app.powerbi.com/view?r=eyJr=EXAMPLE_KEY&pageName=ReportSection2",
+  "https://app.powerbi.com/view?r=eyJr=EXAMPLE_KEY&pageName=ReportSection3",
+  "https://app.powerbi.com/view?r=eyJr=EXAMPLE_KEY&pageName=ReportSection4"
+];
+
+let index = 0;
+const frame = document.getElementById('reportFrame');
+
+function rotateReports() {
+  frame.src = urls[index];
+  index = (index + 1) % urls.length;
+}
+
+// Change every 30 seconds
+rotateReports(); // Initial load
+setInterval(rotateReports, 30000);
