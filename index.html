@@ -2,15 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tamilvel B | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     :root {
       --bg-light: #f4f4f4;
       --bg-dark: #121212;
-      --glass: rgba(255, 255, 255, 0.1);
       --text-light: #fff;
       --text-dark: #1a1a1a;
       --accent: linear-gradient(to right, #ffe259, #20e2d7);
@@ -21,6 +19,7 @@
       background: var(--bg-light);
       color: var(--text-dark);
       transition: background 0.3s, color 0.3s;
+      overflow-x: hidden;
     }
     body.dark-mode {
       background: var(--bg-dark);
@@ -31,7 +30,7 @@
       background: var(--accent);
       text-align: center;
       position: relative;
-      backdrop-filter: blur(10px);
+      overflow: hidden;
     }
     header h1 {
       font-size: 3rem;
@@ -69,54 +68,33 @@
       padding-left: 1rem;
       margin-bottom: 1.5rem;
     }
-    .skills-grid, .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1.5rem;
+    .floating-skill {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      animation: float 12s linear infinite;
+      opacity: 0.6;
+      z-index: 0;
     }
-    .skill-card, .project-card {
-      padding: 1rem;
-      border-radius: 12px;
-      text-align: center;
-      background: var(--glass);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    .floating-skill img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
-    .skill-card i {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      color: #ffe259;
-    }
-    .project-card a {
-      display: inline-block;
-      margin-top: 0.5rem;
-      padding: 0.4rem 0.8rem;
-      background: #1e90ff;
-      color: white;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .contact form {
-      display: grid;
-      gap: 1rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .contact input, .contact textarea {
-      padding: 1rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-    }
-    .contact button {
-      background: #20e2d7;
-      color: #000;
-      padding: 1rem;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 8px;
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.4;
+      }
+      50% {
+        transform: translateY(-200px) rotate(180deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(0) rotate(360deg);
+        opacity: 0.4;
+      }
     }
   </style>
 </head>
@@ -125,46 +103,22 @@
     <button class="toggle-btn" onclick="toggleMode()">Toggle Theme</button>
     <h1>Tamilvel B</h1>
     <p>MIS Executive | Power BI Developer | Excel & Power Platform Specialist</p>
+
+    <!-- Floating Skill Logos -->
+    <div class="floating-skill" style="left: 5%; animation-delay: 0s;"><img src="logos/powerbi.png" alt="Power BI"></div>
+    <div class="floating-skill" style="left: 20%; animation-delay: 2s;"><img src="logos/excel.png" alt="Excel"></div>
+    <div class="floating-skill" style="left: 35%; animation-delay: 4s;"><img src="logos/vba.png" alt="VBA"></div>
+    <div class="floating-skill" style="left: 50%; animation-delay: 6s;"><img src="logos/powerapps.png" alt="Power Apps"></div>
+    <div class="floating-skill" style="left: 65%; animation-delay: 8s;"><img src="logos/powerautomate.png" alt="Power Automate"></div>
+    <div class="floating-skill" style="left: 80%; animation-delay: 10s;"><img src="logos/dax.png" alt="DAX"></div>
   </header>
 
   <section>
     <h2>About Me</h2>
-    <p>I’m Tamilvel, a data enthusiast with 3+ years experience in Excel Reporting, Power BI, Power Apps, and automation. I create interactive dashboards and streamline processes for smarter decisions.</p>
-  </section>
-
-  <section>
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card"><i class="fab fa-microsoft"></i><p>Power BI</p></div>
-      <div class="skill-card"><i class="fas fa-table"></i><p>Excel</p></div>
-      <div class="skill-card"><i class="fas fa-code"></i><p>VBA / Macros</p></div>
-      <div class="skill-card"><i class="fas fa-robot"></i><p>Power Automate</p></div>
-      <div class="skill-card"><i class="fas fa-th-large"></i><p>Power Apps</p></div>
-      <div class="skill-card"><i class="fas fa-database"></i><p>Data Modeling</p></div>
-      <div class="skill-card"><i class="fas fa-bolt"></i><p>DAX / Time Intelligence</p></div>
-      <div class="skill-card"><i class="fas fa-comments"></i><p>Communication</p></div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Power BI Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <h4>Adventure Works Dashboard</h4>
-        <p>Sales & profit trends using AI visuals, DAX & SVG</p>
-        <a href="https://app.powerbi.com/view?r=eyJrIjoiOGYwNWMwYTMtMWNjZS00YWFlLWJiY2QtMTE3YzQ5OTkxYzhhIiwidCI6IjkxNjM1MTAzLTM4YmMtNGU2MC04NDg2LWIyYzFlNjAxNjNiNiJ9" target="_blank">View Report</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="contact">
-    <h2>Contact Me</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+    <p>
+      I’m Tamilvel, a passionate MIS Executive with over 3 years of experience in Excel Reporting, Power BI Development, Power Platform tools, and Automation. 
+      I build scalable solutions, interactive dashboards, and help organizations make better data-driven decisions.
+    </p>
   </section>
 
   <script>
