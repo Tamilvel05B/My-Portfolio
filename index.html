@@ -1,130 +1,96 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tamilvel B | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-light: #f4f4f4;
-      --bg-dark: #121212;
-      --text-light: #fff;
-      --text-dark: #1a1a1a;
-      --accent: linear-gradient(to right, #ffe259, #20e2d7);
-    }
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: var(--bg-light);
-      color: var(--text-dark);
-      transition: background 0.3s, color 0.3s;
-      overflow-x: hidden;
-    }
-    body.dark-mode {
-      background: var(--bg-dark);
-      color: var(--text-light);
-    }
-    header {
-      padding: 4rem 2rem;
-      background: var(--accent);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      font-size: 1.3rem;
-    }
-    .toggle-btn {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: #fff;
-      border: none;
-      border-radius: 20px;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    section {
-      max-width: 1000px;
-      margin: 3rem auto;
-      padding: 2rem;
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 16px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(8px);
-    }
-    body.dark-mode section {
-      background: rgba(255, 255, 255, 0.05);
-    }
-    h2 {
-      font-size: 2rem;
-      border-left: 5px solid #ffe259;
-      padding-left: 1rem;
-      margin-bottom: 1.5rem;
-    }
-    .floating-skill {
-      position: absolute;
-      width: 60px;
-      height: 60px;
-      animation: float 12s linear infinite;
-      opacity: 0.6;
-      z-index: 0;
-    }
-    .floating-skill img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0.4;
-      }
-      50% {
-        transform: translateY(-200px) rotate(180deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(0) rotate(360deg);
-        opacity: 0.4;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <button class="toggle-btn" onclick="toggleMode()">Toggle Theme</button>
-    <h1>Tamilvel B</h1>
-    <p>MIS Executive | Power BI Developer | Excel & Power Platform Specialist</p>
-
-    <!-- Floating Skill Logos -->
-    <div class="floating-skill" style="left: 5%; animation-delay: 0s;"><img src="logos/powerbi.png" alt="Power BI"></div>
-    <div class="floating-skill" style="left: 20%; animation-delay: 2s;"><img src="logos/excel.png" alt="Excel"></div>
-    <div class="floating-skill" style="left: 35%; animation-delay: 4s;"><img src="logos/vba.png" alt="VBA"></div>
-    <div class="floating-skill" style="left: 50%; animation-delay: 6s;"><img src="logos/powerapps.png" alt="Power Apps"></div>
-    <div class="floating-skill" style="left: 65%; animation-delay: 8s;"><img src="logos/powerautomate.png" alt="Power Automate"></div>
-    <div class="floating-skill" style="left: 80%; animation-delay: 10s;"><img src="logos/dax.png" alt="DAX"></div>
+   <div class="abstract-bg"></div>
+  <header class="hero-container">
+    <div class="hero-header">
+      <h1 class="hero-name">Tamilvel B</h1>
+      <p class="hero-role">MIS Executive | Power Platform Specialist | Excel Specialist | MS Access Specialist</p>
+    </div>
   </header>
 
   <section>
-    <h2>About Me</h2>
+    <h2>Professional Summary</h2>
     <p>
-      I’m Tamilvel, a passionate MIS Executive with over 3 years of experience in Excel Reporting, Power BI Development, Power Platform tools, and Automation. 
-      I build scalable solutions, interactive dashboards, and help organizations make better data-driven decisions.
+      Experienced MIS Executive with 3.2+ years of expertise in Excel Reporting, Power BI Development, Power Platform (Power Apps & Power Automate), and VBA automation. Proven ability to create interactive dashboards, automate data workflows, and streamline reporting processes for enhanced business efficiency.
     </p>
   </section>
 
-  <script>
-    function toggleMode() {
-      document.body.classList.toggle('dark-mode');
-    }
-  </script>
+  <section>
+    <h2>Skills</h2>
+    <div class="ticker-wrap">
+      <div class="ticker">
+        <div class="skill"><img src="logos/powerbi.png" alt="Power BI"><span>Power BI</span></div>
+        <div class="skill"><img src="logos/excel.png" alt="Excel"><span>Excel</span></div>
+        <div class="skill"><img src="logos/msaccess.png" alt="MS Access"><span>MS Access</span></div>
+        <div class="skill"><img src="logos/Sql.png" alt="SQL"><span>SQL</span></div>
+        <div class="skill"><img src="logos/vba.png" alt="VBA"><span>VBA</span></div>
+        <div class="skill"><img src="logos/powerapps.png" alt="Power Apps"><span>Power Apps</span></div>
+        <div class="skill"><img src="logos/powerautomate.png" alt="Power Automate"><span>Power Automate</span></div>
+        <div class="skill"><img src="logos/dax.png" alt="DAX"><span>DAX</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Key Projects</h2>
+    <ul>
+      <li><strong>Adventure Works Dashboard (Power BI):</strong> Interactive sales insights using AI visuals, SVG sparklines, and advanced DAX measures.</li>
+      <li><strong>Activity Tracker (Power Apps):</strong> App to monitor team task submissions and productivity.</li>
+      <li><strong>Password Expiry Notification:</strong> Automated email reminders using Power Automate and Outlook.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Adventure Works Dashboard</h2>
+    <p><strong>Outline:</strong> Interactive sales insights using AI visuals, SVG sparklines, and advanced DAX measures.</p>
+    <iframe 
+      title="Adventure Works Dashboard"
+      src="https://app.powerbi.com/view?r=eyJrIjoiOGYwNWMwYTMtMWNjZS00YWFlLWJiY2QtMTE3YzQ5OTkxYzhhIiwidCI6IjkxNjM1MTAzLTM4YmMtNGU2MC04NDg2LWIyYzFlNjAxNjNiNiJ9"
+      allowFullScreen="true">
+    </iframe>
+  </section>
+
+  <section>
+    <h2>Certifications</h2>
+    <ul>
+      <li>Microsoft Certified Excel Specialist</li>
+      <li>Completed Power BI Desktop course – Maven Analytics</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>📧 <a href="mailto:tamilvel98425@gmail.com">tamilvel98425@gmail.com</a></p>
+    <p>🔗 <a href="https://www.linkedin.com/in/tamilvel-b-059301240" target="_blank">LinkedIn Profile</a></p>
+
+    <h3>Querying on?</h3>
+    <form id="contactForm">
+      <label><input type="checkbox" value="Power BI"> Power BI</label><br>
+      <label><input type="checkbox" value="Power Apps"> Power Apps</label><br>
+      <label><input type="checkbox" value="Power Automate"> Power Automate</label><br>
+      <label><input type="checkbox" value="Excel Automation"> Excel Automation</label><br>
+      <label><input type="checkbox" value="Dashboard Design"> Dashboard Design</label><br><br>
+
+      <label for="desc">Your Message:</label><br>
+      <textarea id="desc" rows="4" placeholder="Tell me more about what you're looking for..."></textarea><br>
+
+      <button type="button" onclick="sendWhatsApp()">📱 WhatsApp</button>
+      <button type="button" onclick="sendEmail()">📧 Email</button>
+    </form>
+  </section>
+
+  <footer style="text-align:center; padding: 2rem 0; font-size: 0.9rem;">
+    © 2025 Tamilvel B. All rights reserved.
+  </footer>
+  <script src="confetti.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
