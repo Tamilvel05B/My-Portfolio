@@ -188,3 +188,73 @@ footer {
   padding: 2rem 0;
   font-size: 0.9rem;
 }
+.hero-header {
+  background: linear-gradient(to right, #c7ff98, #7482ff);
+  padding: 5rem 2rem 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.blast-text {
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #ffffff, #00ff2a);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: popIn 1.2s ease forwards, shine 4s ease-in-out infinite;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  position: relative;
+  display: inline-block;
+  color: #333;
+}
+
+.subtitle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, #66ff00, #0a21ee);
+  border-radius: 2px;
+  animation: glowBar 3s ease-in-out infinite alternate;
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+@keyframes glowBar {
+  0% {
+    opacity: 0.4;
+    transform: scaleX(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
