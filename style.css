@@ -23,7 +23,8 @@ body {
       justify-content: center;
       align-items: center;
       padding: 2rem 1rem;
-    }
+
+}
 
 @keyframes floatBlob {
   0%, 100% { transform: translateY(0) rotate(0deg); }
