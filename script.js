@@ -97,4 +97,4 @@ function rotateReports() {
 
 // Change every 30 seconds
 rotateReports(); // Initial load
-setInterval(rotateReports, 30000);
+setInterval(rotateReports, 3000);
