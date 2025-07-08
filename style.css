@@ -52,16 +52,33 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the whole block horizontally */
+  gap: 1.5rem;              /* Space between logo and text */
+  padding: 2rem 1rem;
+}
 
-    .hero-name {
-      font-size: 3.8rem;
-      font-weight: 900;
-      background: linear-gradient(90deg, #ffffff, #ffffff);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      animation: textPop 1.2s ease-in;
-    }
+.hero-banner {
+  width: 100px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.profile-text h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.subtitle {
+  margin: 0.5rem 0 0 0;
+  font-weight: 600;
+  color: #1a1a1a;
+}
 
     .hero-role {
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
