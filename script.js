@@ -40,46 +40,40 @@ function sendEmail() {
   document.querySelectorAll('#contactForm input[type="checkbox"]').forEach(cb => cb.checked = false);
   fireConfetti();
 }
-const roles = [
-  "MIS Executive",
-  "Power Apps Developer",
-  "Power BI Developer",
-  "Power Automate Developer",
-  "Power Platform Specialist"
-];
+  const texts = [
+    "Power Apps | Power Automate | Power BI | MS Excel Specialist | MS Access Specialist",
+    "Excel Automation | Dashboard Design | Data Reporting Expert",
+    "Process Optimization | Power Platform Developer"
+  ];
 
-let roleIndex = 0;
-let charIndex = 0;
-let typingForward = true;
-
-function typeRole() {
+  let textIndex = 0;
+  let charIndex = 0;
   const typingElement = document.getElementById("typing");
-  const currentRole = roles[roleIndex];
 
-  if (typingForward) {
-    typingElement.textContent = currentRole.substring(0, ++charIndex);
-    if (charIndex === currentRole.length) {
-      typingForward = false;
-      setTimeout(typeRole, 100); // Pause before deleting
-      return;
-    }
-  } else {
-    typingElement.textContent = currentRole.substring(0, --charIndex);
-    if (charIndex === 0) {
-      typingForward = true;
-      roleIndex = (roleIndex + 1) % roles.length;
+  function type() {
+    if (charIndex < texts[textIndex].length) {
+      typingElement.textContent += texts[textIndex].charAt(charIndex);
+      charIndex++;
+      setTimeout(type, 50);
+    } else {
+      setTimeout(erase, 2000);
     }
   }
 
-  setTimeout(typeRole, typingForward ? 100 : 50);
-}
-window.onload = () => {
-  confetti({
-    particleCount: 100,
-    spread: 70,
-    origin: { y: 0.3 }
+  function erase() {
+    if (charIndex > 0) {
+      typingElement.textContent = texts[textIndex].substring(0, charIndex - 1);
+      charIndex--;
+      setTimeout(erase, 30);
+    } else {
+      textIndex = (textIndex + 1) % texts.length;
+      setTimeout(type, 500);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    if (texts.length) setTimeout(type, 1000);
   });
-};
 const urls = [
   "https://app.powerbi.com/view?r=eyJrIjoiOGYwNWMwYTMtMWNjZS00YWFlLWJiY2QtMTE3YzQ5OTkxYzhhIiwidCI6IjkxNjM1MTAzLTM4YmMtNGU2MC04NDg2LWIyYzFlNjAxNjNiNiJ9&pageName=Exec Dashboard",
   "https://app.powerbi.com/view?r=eyJrIjoiOGYwNWMwYTMtMWNjZS00YWFlLWJiY2QtMTE3YzQ5OTkxYzhhIiwidCI6IjkxNjM1MTAzLTM4YmMtNGU2MC04NDg2LWIyYzFlNjAxNjNiNiJ9&pageName=Map",
