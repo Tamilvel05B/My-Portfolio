@@ -44,7 +44,7 @@ body {
     }
 
     .hero-banner {
-  width: 120px;
+  width: auto-width;
   max-height: Auto-height;
   object-fit: cover;
   border-radius: 16px;
