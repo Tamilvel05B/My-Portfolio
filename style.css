@@ -19,11 +19,16 @@ body {
   opacity: 0.7;
 }
 .hero-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem 1rem;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(to right, #c7ff98, #7482ff);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 @keyframes floatBlob {
